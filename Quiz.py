@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font as font
+import random
 
 
 window=tk.Tk(className=" Quiz Application")
@@ -18,10 +19,11 @@ greeting.pack(padx=5,pady=5)
 
 questions=['A','B','C','D','E']
 
-random=random(questions)
+random=random.randint(0,4)
+number=questions[0]
 
-question=Label(text=random)
-question.pa+9+
+question=tk.Label(text=number)
+question.pack()
 
 
 
