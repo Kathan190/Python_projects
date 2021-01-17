@@ -1,38 +1,31 @@
+import sys
+import math
+import random
+
 balance = 1000
-chances = 0
-print("Welcome to my Atm.")
-print("Here, Below these are some instruction.")
-print("You have to enter Your first name and everything shows up on the screen.")
+total = 0
+print("Welcome to my ATM. ")
+print("Instuctions")
+print("1. Machine will give you unique number as a pin. ")
 
-dict1 = {'kathan':"sheth, Acc-no: 121212",
-'Atik':'Sindha, Acc-no: 212121',
-'Darshan':'Dabhi, Acc-no: 313131',
-'Krunesh':'Patel, Acc-no: 414141'}
+number = random.randint(1, 100)
+print("Your number is ",number)
 
-first_name = str(input("First Name: "))
-print(dict1[first_name])
-
-pin = int(input("Enter your four digit pin number: "))
-if (pin == 1234):
-    print("There are four options for you.\n ")
-    print("1. Display Balance. ")
-    print("2. Deposit the Cash. ")
-    print("3. Cash Out. ")
-    print("4. Reset the Pin. ")
-    options = str(input("Select the number: "))
-    while (options == "1"):
-        print("Your main balance is ",balance)
-        break
-    if (options == "2"):
-        print("How much You want to Deposit Cash. ")
-        deposit = int(input("Enter the Amount here: "))
-        if (deposit <= 1000):
-            print("You successfully deposit the amount. ")
-            amount = deposit + balance
-            print("Your main balance is: ",amount)
-        else:
-            print("You can not deposit over 1000 Pound. ")
-            
-       
-
-    
+num = int(input("Enter your pin number: "))
+if num == number:
+    print("You Have successfully login. \n")
+    print("1. Display the balance. ")
+    print("2. Deposit the cash. ")
+    print("3. Withdraw the money. \n")
+    options = input("Please select the number: \n")
+    if options == "1":
+        print("Your Main balance is ",balance)
+    elif options == "2":
+        deposit = int(input("Enter the deposit amout in to the machine: "))
+        total = deposit + balance
+        print("\n")
+        print("Your amaount is successfully deposit. ")
+        print("Total balance is ",total)
+else:
+    print("You have entered wrong pin number. ")
+    print("Please try again. ")
