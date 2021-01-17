@@ -26,6 +26,14 @@ if num == number:
         print("\n")
         print("Your amaount is successfully deposit. ")
         print("Total balance is ",total)
+    elif options == "3":
+        amount = float(input("How much you want to withdraw: "))
+        if amount > 300:
+            print("Your limit has been exceed.")
+        else:
+            print("Please collect money. ")
+            total = amount - balance
+            print("Your main balance is ",total)
 else:
     print("You have entered wrong pin number. ")
     print("Please try again. ")
