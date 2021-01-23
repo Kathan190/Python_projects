@@ -1,39 +1,32 @@
 import sys
-import math
 import random
+import math
 
 balance = 1000
-total = 0
-print("Welcome to my ATM. ")
-print("Instuctions")
-print("1. Machine will give you unique number as a pin. ")
+number = random.randint(1000, 2000)
 
-number = random.randint(1, 100)
-print("Your number is ",number)
+def about_menu():
+    print("1. Check your Balance.")
+    print("2. Cash out.")
+    print("3. Deposit the Cash.")
+    input("Push Enter for going for main menu. ")
 
-num = int(input("Enter your pin number: "))
-if num == number:
-    print("You Have successfully login. \n")
-    print("1. Display the balance. ")
-    print("2. Deposit the cash. ")
-    print("3. Withdraw the money. \n")
-    options = input("Please select the number: \n")
-    if options == "1":
-        print("Your Main balance is ",balance)
-    elif options == "2":
-        deposit = int(input("Enter the deposit amout in to the machine: "))
-        total = deposit + balance
-        print("\n")
-        print("Your amaount is successfully deposit. ")
-        print("Total balance is ",total)
-    elif options == "3":
-        amount = float(input("How much you want to withdraw: "))
-        if amount > 300:
-            print("Your limit has been exceed.")
+def menu():
+    while True:
+        number = random.randint(1000, 2000)
+        print("Your four digit random number is ",number)
+        print("Enter this number as a pin.")
+        pin = int(input("Enter the four digit number: "))
+        if pin == number:
+            print("You have succesfully entered. ")
+            print("Please select this options.")
+            about_menu()
         else:
-            print("Please collect money. ")
-            total = amount - balance
-            print("Your main balance is ",total)
-else:
-    print("You have entered wrong pin number. ")
-    print("Please try again. ")
+            print("Try again.")
+            break
+
+    
+
+
+if __name__ == '__main__':
+    menu()
